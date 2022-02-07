@@ -1,0 +1,86 @@
+<?php
+session_start();
+include("conexao.php");
+
+	$nome = filter_input(INPUT_POST, 'nome', FILTER_SANITIZE_STRING);
+	$nascimento = $_POST["nascimento"];
+	$ativo = $_POST["ativo"];
+				echo "Nome: $nome <br>";
+				echo "Nascimento: $nascimento <br>";
+				echo "Ativo: $ativo <br>";
+	cadastrar($nome, $nascimento, $ativo);
+	
+				
+				
+				/*
+				
+				$firstDate  = new DateTime("2019-01-01");
+$secondDate = new DateTime("2020-03-04");
+$intvl = $firstDate->diff($secondDate);
+
+
+echo $intvl->y . " year, " . $intvl->m." months and ".$intvl->d." day"; 
+echo "\n";
+// Total amount of days
+echo $intvl->days . " days ";
+
+//output: 1 year, 2 months and 1 day
+//        428 days
+				
+				
+				
+				/*
+				$pessoa = array('nome' => $nome, 'idade' => $idade);
+				
+				if(!is_array($_SESSION['usuario'])){
+					$_SESSION['usuario'] = array();
+				}
+				/*foreach ($_SESSION['usuario'] as $row)
+					{
+						foreach($row as $i => $a)
+						{
+							if ($a <> $nome){
+								$igual = 0;
+							} else{
+								$igual = 1;
+								break;
+							}
+						}
+					} */
+					/*
+		$cadastrado = 0;			
+		// $usuario = 	$_SESSION['usuario'];
+		foreach ($_SESSION['usuario'] as $index=>$indexsub)
+		{
+			if ( $indexsub['nome'] == "$nome" )
+			{
+				$message = "Já cadastrado!";
+				
+				echo "<script type='text/javascript'>alert('$message');
+				 window.location.href='index.php';
+				</script>";
+				
+				$cadastrado = 1;
+				
+			}
+			
+			
+		}
+				
+				
+				 //$_SESSION['usuario'] = $usuario;
+					
+					echo $cadastrado;
+				if($cadastrado == 0){
+					
+					array_push($_SESSION['usuario'],$pessoa);
+					$message = "Será cadastrado!";
+					echo "<script type='text/javascript'>alert('$message');
+				 window.location.href='index.php';
+				</script>";
+
+				}
+				//$usuario = $adiciona($usuario, $nome, $idade);
+				var_dump($_SESSION['usuario']);
+
+*/
